@@ -1,0 +1,15 @@
+html
+  head
+    title= title
+    style
+      include ./style.css
+  body
+    div
+      .center(align='center')
+        form(action='/course')
+          - var values = courses;
+          select(name='sel_course')
+            each val in values.length ? values : ['There are no values']
+              label="label"
+              option(value=val+".xlsx")= val
+          input(type='submit' value='Далее')
